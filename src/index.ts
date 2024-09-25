@@ -24,5 +24,15 @@ export default function render(str: string) {
   div.className = "w-full markdown prose w-full break-words dark:prose-invert dark"
   const html = marked(str) as string;
   div.innerHTML = html;
-  return { html, div}
+  return { html, div }
+}
+
+export async function renderUrl(url: string) {
+  const res = await fetch(url);
+  const text = await res.text();
+  return render(text);
+}
+
+export async function renderUrlToElement(url: string, element: HTMLElement) {
+  element.innerHTML = (await renderUrl(url)).html
 }

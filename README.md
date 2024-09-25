@@ -26,6 +26,21 @@ Include this html:
 </script>
 ```
 
+Or include this html:
+
+```html
+<style>
+  body {
+    background-color: #202020;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
+<script type="module">
+  import { renderUrlToElement } from "https://jadujoel.github.io/markdown-renderer/index.js"
+  renderUrlToElement('https://jadujoel.github.io/markdown-renderer/README.md', document.body);
+</script>
+
 You will now have rendered your readme file as markdown on the webpage.
 
 - fast

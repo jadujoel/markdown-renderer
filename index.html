@@ -1,0 +1,17 @@
+<style>
+  body {
+    background-color: #202020;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
+<script type="module">
+  import render from "https://jadujoel.github.io/markdown-renderer/index.js"
+  start()
+  async function start() {
+    const text = await fetch('https://jadujoel.github.io/markdown-renderer/README.md').then(response => response.text());
+    console.log(text)
+    const ret = render(text);
+    document.body.appendChild(ret.div);
+  }
+</script>
