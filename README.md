@@ -35,7 +35,7 @@ You will now have rendered your readme file as markdown on the webpage.
 ## Develop
 
 ```bash
-git clone https://github.com/jadujoel/markdown-renderer:main
+git clone git@github.com:jadujoel/markdown-renderer.git
 bun install
 bun run build
 bunx bun-serve dist
