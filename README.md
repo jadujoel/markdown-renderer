@@ -47,6 +47,7 @@ Or include this html:
   document.body.appendChild(div);
   renderUrlToElement('https://jadujoel.github.io/markdown-renderer/README.md', div);
 </script>
+```
 
 You will now have rendered your readme file as markdown on the webpage.
 
