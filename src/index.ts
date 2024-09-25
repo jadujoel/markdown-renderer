@@ -33,6 +33,11 @@ export async function renderUrl(url: string) {
   return render(text);
 }
 
-export async function renderUrlToElement(url: string, element: HTMLElement) {
-  element.innerHTML = (await renderUrl(url)).html
+export async function renderUrlToElement<T extends HTMLElement>(url: string, element: T): Promise<T> {
+  const res = await fetch(url);
+  const text = await res.text();
+  const html = await marked(text);
+  element.classList.add("w-full", "markdown", "prose", "w-full", "break-words", "dark:prose-invert", "dark")
+  element.innerHTML = html
+  return element
 }

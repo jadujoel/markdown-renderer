@@ -37,8 +37,15 @@ Or include this html:
   }
 </style>
 <script type="module">
-  import { renderUrlToElement } from "https://jadujoel.github.io/markdown-renderer/index.js"
-  renderUrlToElement('https://jadujoel.github.io/markdown-renderer/README.md', document.body);
+  import { renderUrl, renderUrlToElement } from "https://jadujoel.github.io/markdown-renderer/index.js"
+  renderUrl('https://jadujoel.github.io/markdown-renderer/README.md').then(ret => {
+    console.log(ret)
+    document.body.appendChild(ret.div);
+  });
+
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  renderUrlToElement('https://jadujoel.github.io/markdown-renderer/README.md', div);
 </script>
 
 You will now have rendered your readme file as markdown on the webpage.

@@ -6,12 +6,13 @@
   }
 </style>
 <script type="module">
-  import render from "https://jadujoel.github.io/markdown-renderer/index.js"
-  start()
-  async function start() {
-    const text = await fetch('https://jadujoel.github.io/markdown-renderer/README.md').then(response => response.text());
-    console.log(text)
-    const ret = render(text);
+  import { renderUrl, renderUrlToElement } from "https://jadujoel.github.io/markdown-renderer/index.js"
+  renderUrl('https://jadujoel.github.io/markdown-renderer/README.md').then(ret => {
+    console.log(ret)
     document.body.appendChild(ret.div);
-  }
+  });
+
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  renderUrlToElement('https://jadujoel.github.io/markdown-renderer/README.md', div);
 </script>
