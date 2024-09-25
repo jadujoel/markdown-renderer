@@ -1,5 +1,7 @@
 # Markdown Renderer
 
+[Example page](https://jadujoel.github.io/markdown-renderer/)
+
 ## Quickstart
 
 Include this html:
@@ -25,8 +27,6 @@ Include this html:
 ```
 
 You will now have rendered your readme file as markdown on the webpage.
-
-[Example page](https://jadujoel.github.io/markdown-renderer/)
 
 - fast
 - convenient
