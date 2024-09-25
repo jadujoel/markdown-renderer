@@ -1,15 +1,18 @@
+import "highlight.js/lib/common";
 import hljs from "highlight.js";
 import { marked } from "marked";
 import { style } from "../css.macro" with { type: 'macro' };
 
 document.head.innerHTML += style()
-
 const renderer = new marked.Renderer();
 renderer.code = ({ text, lang }) => {
-  const validLanguage =
-    hljs.getLanguage(lang ?? "plaintext")?.name ?? "plaintext";
-  const highlighted = hljs.highlight(text, { language: validLanguage }).value;
-  return `<pre><code class="hljs language-${validLanguage}">${highlighted}</code></pre>`;
+  try {
+    const language = hljs.getLanguage(lang ?? "plaintext") === undefined ? "plaintext" : lang ?? "plaintext";
+    const highlighted = hljs.highlight(text, { language }).value;
+    return `<pre><code class="hljs language-${language}">${highlighted}</code></pre>`;
+  } catch {
+    return `<pre><code class="hljs language-plaintext">${text}</code></pre>`;
+  }
 };
 
 marked.use({

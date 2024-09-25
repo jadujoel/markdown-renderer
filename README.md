@@ -13,10 +13,10 @@ Include this html:
   }
 </style>
 <script type="module">
-  import render from "https://github.jadujoel.com/markdown-renderer/index.js"
+  import render from "https://jadujoel.github.io/markdown-renderer/index.js"
   start()
   async function start() {
-    const text = await fetch('https://github.jadujoel.com/markdown-renderer/README.md').then(response => response.text());
+    const text = await fetch('https://jadujoel.github.io/markdown-renderer/README.md').then(response => response.text());
     console.log(text)
     const ret = render(text);
     document.body.appendChild(ret.div);
@@ -26,7 +26,7 @@ Include this html:
 
 You will now have rendered your readme file as markdown on the webpage.
 
-[Example page](https://github.jadujoel.com/markdown-renderer/README.md)
+[Example page](https://jadujoel.github.io/markdown-renderer/)
 
 - fast
 - convenient
